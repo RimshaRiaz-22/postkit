@@ -1,0 +1,8 @@
+LinkedIn video downloader API running on http://localhost:8877
+[0mGET /api/health [32m200[0m 2.902 ms - 11[0m
+[0mPOST /api/resolve [32m200[0m 1831.533 ms - 987[0m
+[0mGET /api/download?src=https%3A%2F%2Fdms.licdn.com%2Fplaylist%2Fvid%2Fv2%2FD4D05AQHnMarNJVZPkg%2Fmp4-720p-30fp-crf28%2FB4DaBmQwtkIYCQ-%2F0%2F1788422076084%3Fe%3D2147483647%26v%3Dbeta%26t%3Dvpoiv7hgwMYMCzvv5SY23z4tDNVNbIwqMTLNQxP5WD0&filename=%23toyotaprotectionplan%20%23toyotapakistan%20%23toyota%20%23pro [32m200[0m 45.874 ms - 3099159[0m
+[0mPOST /api/resolve [32m200[0m 1271.324 ms - 1156[0m
+[0mGET /api/download?src=https%3A%2F%2Fdms.licdn.com%2Fplaylist%2Fvid%2Fv2%2FD4E10AQG2bhMOU01JAA%2Fmp4-720p-30fp-crf28%2FB4EaCjz_b6IYBk-%2F0%2F1789454725303%3Fe%3D2147483647%26v%3Dbeta%26t%3DuBe9Madlx9m2TW7mAhZJhr5WyiZa9VFfoJgQ9PEZHUs&filename=The%20Original%20Plan%20for%20Strand%20Wasn%26%2339%3Bt%20This%20%7C%20Oli [32m200[0m 16.249 ms - 3715092[0m
+[0mPOST /api/resolve [32m200[0m 2593.449 ms - 987[0m
+[0mGET /api/download?src=https%3A%2F%2Fdms.licdn.com%2Fplaylist%2Fvid%2Fv2%2FD4D05AQHnMarNJVZPkg%2Fmp4-720p-30fp-crf28%2FB4DaBmQwtkIYCQ-%2F0%2F1788422076084%3Fe%3D2147483647%26v%3Dbeta%26t%3Dvpoiv7hgwMYMCzvv5SY23z4tDNVNbIwqMTLNQxP5WD0&filename=%23toyotaprotectionplan%20%23toyotapakistan%20%23toyota%20%23pro [32m200[0m 34.980 ms - 3099159[0m
