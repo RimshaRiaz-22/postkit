@@ -9,12 +9,14 @@ import { errorHandler } from './middleware/errorHandler.js';
 export function createApp() {
   const app = express();
 
-  const allowedOrigins = (process.env.CORS_ORIGIN || 'http://localhost:5173')
+  // CORS_ORIGIN: "*" (default) allows any origin, or a comma-separated list to restrict.
+  const allowedOrigins = (process.env.CORS_ORIGIN || '*')
     .split(',')
     .map((origin) => origin.trim());
+  const corsOrigin = allowedOrigins.includes('*') ? '*' : allowedOrigins;
 
-  app.use(helmet());
-  app.use(cors({ origin: allowedOrigins }));
+  app.use(helmet({ crossOriginResourcePolicy: { policy: 'cross-origin' } }));
+  app.use(cors({ origin: corsOrigin }));
   app.use(morgan('dev'));
   app.use(express.json());
 
