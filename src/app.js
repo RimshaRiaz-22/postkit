@@ -13,10 +13,25 @@ export function createApp() {
   const allowedOrigins = (process.env.CORS_ORIGIN || '*')
     .split(',')
     .map((origin) => origin.trim());
-  const corsOrigin = allowedOrigins.includes('*') ? '*' : allowedOrigins;
+  const allowAll = allowedOrigins.includes('*');
+
+  // Any localhost / 127.0.0.1 / LAN dev origin on any port is always allowed,
+  // so changing the Vite port (5173, 5174, ...) never causes a CORS error.
+  const devOrigin =
+    /^https?:\/\/(localhost|127\.0\.0\.1|\[::1\]|(192\.168|10)\.\d+\.\d+|172\.(1[6-9]|2\d|3[01])\.\d+)(:\d+)?$/;
+
+  const corsOptions = {
+    origin(origin, callback) {
+      // No Origin header (curl, server-to-server) or an allowed origin.
+      if (!origin || allowAll || devOrigin.test(origin) || allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      }
+      return callback(null, false);
+    },
+  };
 
   app.use(helmet({ crossOriginResourcePolicy: { policy: 'cross-origin' } }));
-  app.use(cors({ origin: corsOrigin }));
+  app.use(cors(corsOptions));
   app.use(morgan('dev'));
   app.use(express.json());
 
